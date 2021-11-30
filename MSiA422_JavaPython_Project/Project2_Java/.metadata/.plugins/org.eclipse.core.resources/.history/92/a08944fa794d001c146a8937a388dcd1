@@ -1,0 +1,97 @@
+import java.util.ArrayList;
+
+public class myDataFrame {
+
+	public ArrayList<ArrayList<Object>> data;
+	public int length;
+	public ArrayList<String> header;
+
+	// constructor
+	public myDataFrame(ArrayList<ArrayList<Object>> data) {
+
+		// create an array list to store header
+		ArrayList<String> header = new ArrayList<String>();
+
+		// add column name to header
+		header.add("State");
+		header.add("Gender");
+		header.add("Year");
+		header.add("Name");
+		header.add("Count");
+
+		this.header = header;
+		this.length = data.size();
+		this.data = data;
+	}
+
+	public myDataFrame head(int n) {
+		// create a new array list to store the result.
+		ArrayList<ArrayList<Object>> head = new ArrayList<>();
+		// get the first n item in data and add to head
+		for (int i = 0; i < n; i++) {
+			head.add(data.get(i));
+		}
+		myDataFrame head_df = new myDataFrame(head);
+		return head_df;
+	}
+
+	public myDataFrame tail(int n) {
+		// create a new array list to store the result.
+		ArrayList<ArrayList<Object>> tail = new ArrayList<>();
+		// get the first n item in data and add to head
+		for (int i = length - n; i < length; i++) {
+			tail.add(data.get(i));
+		}
+		myDataFrame tail_df = new myDataFrame(tail);
+		return tail_df;
+	}
+
+	public String dType(int index) {
+		// create a new string: type and set the default to String;
+		String type = "String";
+
+		// get the type of the first row entry of column index.
+		String type_first = "";
+
+		if (data.get(1).get(index) instanceof Integer) {
+			type_first = "Integer";
+		} else {
+			type_first = "String";
+		}
+
+		type = type_first;
+
+		// loop through all entries to check if the data types are the same.
+		if (type_first == "Integer") {
+			for (int i = 0; i < length; i++) {
+				if (data.get(1).get(index) instanceof String) {
+					type = "String";
+					break;
+				}
+			}
+		}
+		return type;
+	}
+	
+	public String dType(String name) {
+		int index = header.indexOf(name);
+		String type = dType(index);
+		return type;
+	}
+	
+	public myDataFrame slice(int index) {
+		
+		ArrayList<ArrayList<Object>> slice = new ArrayList<>();
+		for(int i = 0; i < length; i++) {
+			slice.add(data.get(i).get(index));
+		}
+		return slice_df;
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

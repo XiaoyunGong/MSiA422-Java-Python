@@ -1,0 +1,114 @@
+package hashFunctions;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.Scanner;
+
+public class HashFunctions {
+
+	public static ArrayList<Integer> h1(ArrayList<String> lst) {
+		// set a return arrayList "reLst"
+		ArrayList<Integer> reLst = new ArrayList<Integer>();
+
+		// loop through all entries in the given string arrayLst.
+		for (int i = 0; i < lst.size(); i++) {
+			int sum = 0;
+			for (int j = 0; j < lst.get(i).length(); j++) {
+				sum += (int) lst.get(i).charAt(j);
+			}
+			reLst.add(i, sum % lst.size());
+		}
+		return reLst;
+	}
+
+	public static ArrayList<Integer> h2(ArrayList<String> lst2) {
+		// set a return arrayList "reLst"
+		ArrayList<Integer> reLst2 = new ArrayList<Integer>();
+
+		// loop through all entries in the given string arrayLst.
+		for (int i = 0; i < lst2.size(); i++) {
+			reLst2.add(i, lst2.get(i).hashCode() % lst2.size());
+		}
+		return reLst2;
+	}
+
+	public static Hashtable<Integer, String> getDict(ArrayList<String> valueLst, ArrayList<Integer> keyLst) {
+		Hashtable<Integer, String> reDict = new Hashtable<Integer, String>();
+		// set keys to integers from 1 to size(valueList), set "EMPTY LINE" to default.
+		for (int i = 0; i < valueLst.size(); i++) {
+			reDict.put(i, "EMPTY LINE");
+		}
+
+		// change value in reDict the desired.
+		for (int j = 0; j < keyLst.size(); j++) {
+			if (reDict.get(keyLst.get(j)) == "EMPTY LINE") {
+				reDict.put(keyLst.get(j), valueLst.get(j));
+			} else {
+				String existValue = reDict.get(keyLst.get(j));
+				String newValue = existValue + ", " + valueLst.get(j);
+				reDict.put(keyLst.get(j), newValue);
+			}
+		}
+
+		return reDict;
+	}
+
+	public int countEmpty(Hashtable<Integer, String> myDict) {
+		int emptyLine = 0;
+		for (int i = 0; i < myDict.size(); i++) {
+			if (myDict.get(i) == "EMPTY LINE") {
+				emptyLine++;
+			}
+		}
+		return emptyLine;
+	}
+
+	public static ArrayList<String> readIn(int size) throws FileNotFoundException {
+		File text = new File("input.txt");
+		try (Scanner sc = new Scanner(text)) {
+			ArrayList<String> input = new ArrayList<String>();
+			for (int i = 0; i < size; i++) {
+				String line = sc.nextLine();
+				input.add(i, line);
+			}
+			return input;
+		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of the array:");
+		int size = sc.nextInt();
+		ArrayList<String> valueLst = readIn(size);
+		ArrayList<Integer> keyLst_h1 = h1(valueLst);
+		ArrayList<Integer> keyLst_h2 = h2(valueLst);
+
+		Hashtable<Integer, String> h1Dict = getDict(valueLst, keyLst_h1);
+		Hashtable<Integer, String> h2Dict = getDict(valueLst, keyLst_h2);
+
+		FileWriter writer_h1 = new FileWriter("output_h1.txt");
+		for (int i = 1; i < h1Dict.size(); i++) {
+			writer_h1.write(i + " " + h1Dict.get(i));
+			writer_h1.write(System.lineSeparator());
+		}
+		writer_h1.write(size + " " + h1Dict.get(0));
+		writer_h1.write(System.lineSeparator());
+		writer_h1.close();
+		
+		FileWriter writer_h2 = new FileWriter("output_h1.txt");
+		for (int i = 1; i < h2Dict.size(); i++) {
+			writer_h2.write(i + " " + h2Dict.get(i));
+			writer_h2.write(System.lineSeparator());
+		}
+		writer_h2.write(size + " " + h2Dict.get(0));
+		writer_h2.write(System.lineSeparator());
+		writer_h2.close();
+
+
+	}
+
+}

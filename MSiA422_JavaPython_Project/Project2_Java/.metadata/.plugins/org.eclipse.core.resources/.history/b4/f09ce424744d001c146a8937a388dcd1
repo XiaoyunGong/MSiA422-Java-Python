@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+
+public class myDataFrame {
+
+	public ArrayList<ArrayList<Object>> data;
+	public int length;
+	public ArrayList<String> header;
+
+	// constructor
+	public myDataFrame(ArrayList<ArrayList<Object>> data) {
+
+		// create an array list to store header
+		ArrayList<String> header = new ArrayList<String>();
+
+		// add column name to header
+		header.add("State");
+		header.add("Gender");
+		header.add("Year");
+		header.add("Name");
+		header.add("Count");
+
+		this.header = header;
+		this.length = data.size();
+		this.data = data;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

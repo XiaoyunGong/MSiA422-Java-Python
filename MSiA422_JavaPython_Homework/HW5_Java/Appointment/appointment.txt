@@ -1,0 +1,6 @@
+Daily Meeting Daily Appt. Sample 1 starting from 2021/1/1 ending on 2022/2/1.
+Monthly Meeting Monthly Appt. Sample 1 starting in 2021/1 ending in 2022/2 occurs on the 1.
+One Time Meeting One Time Appt. Sample 1 on 2021/1/1
+Daily Meeting Daily Appt. Sample 2 starting from 2021/1/2 ending on 2022/2/4.
+Monthly Meeting Monthly Appt. Sample 2 starting in 2021/2 ending in 2022/2 occurs on the 4.
+One Time Meeting One Time Appt. Sample 2 on 2021/2/4

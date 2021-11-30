@@ -1,0 +1,114 @@
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Appointment {
+
+	public static String description;
+	public ArrayList<Appointment> appt;
+
+//public Integer year, month, day, startYear, startMonth, startDay, endYear, endMonth, endDay;
+
+//constructor
+	public Appointment(String description) {
+		Appointment.description = description;
+	}
+
+	public static ArrayList<Appointment> addApp(ArrayList<Appointment> appt) {
+
+		Scanner sc = new Scanner(System.in);
+		int choice = 0;
+
+		while (choice != 4) {
+			try {
+				System.out.println("Please select which type of appointment you want to add.");
+				System.out.println("Type in 1 if you want to add an ONE TIME appointment.");
+				System.out.println("Type in 2 if you want to add a DAILY appointment.");
+				System.out.println("Type in 3 if you want to add an MONTHLY appointment.");
+				System.out.println("Type in 4 if you want to exit.");
+				choice = sc.nextInt();
+
+				if (choice == 1) {
+					System.out.println("You are adding an ONE TIME appointment.");
+					System.out.println("Please enter the description of this appointment.");
+					description = sc.next();
+					System.out.println("Please enter the YEAR of this appointment.");
+					int year = sc.nextInt();
+					System.out.println("Please enter the MONTH of this appointment.");
+					int month = sc.nextInt();
+					System.out.println("Please enter the DAY of this appointment.");
+					int day = sc.nextInt();
+
+					appt.add(new Onetime(description, year, month, day));
+					System.out.println("Adding appointment");
+					System.out.println((appt.get(appt.size() - 1)).toString());
+					System.out.println("...added");
+
+				}
+
+				else if (choice == 2) {
+					System.out.println("You are adding a DAILY appointment.");
+					System.out.println("Please enter the description of this appointment.");
+					description = sc.next();
+					System.out.println("Please enter the START YEAR of this appointment.");
+					int startYear = sc.nextInt();
+					System.out.println("Please enter the START MONTH of this appointment.");
+					int startMonth = sc.nextInt();
+					System.out.println("Please enter the START DAY of this appointment.");
+					int startDay = sc.nextInt();
+					System.out.println("Please enter the END YEAR of this appointment.");
+					int endYear = sc.nextInt();
+					System.out.println("Please enter the END MONTH of this appointment.");
+					int endMonth = sc.nextInt();
+					System.out.println("Please enter the END DAY of this appointment.");
+					int endDay = sc.nextInt();
+					appt.add(new Daily(description, startYear, startMonth, startDay, endYear, endMonth, endDay));
+
+					System.out.println("Adding appointment");
+					System.out.println((appt.get(appt.size() - 1)).toString());
+					System.out.println("...added");
+				}
+
+				else if (choice == 3) {
+					System.out.println("You are adding a MONTHLY appointment.");
+					System.out.println("Please enter the description of this appointment.");
+					description = sc.next();
+					System.out.println("Please enter the START YEAR of this appointment.");
+					int startYear = sc.nextInt();
+					System.out.println("Please enter the START MONTH of this appointment.");
+					int startMonth = sc.nextInt();
+					System.out.println("Please enter the END YEAR of this appointment.");
+					int endYear = sc.nextInt();
+					System.out.println("Please enter the END MONTH of this appointment.");
+					int endMonth = sc.nextInt();
+					System.out.println("Please enter the DAY of this appointment.");
+					int day = sc.nextInt();
+					appt.add(new Monthly(description, startYear, startMonth, endYear, endMonth, day));
+
+					System.out.println("Adding appointment");
+					System.out.println((appt.get(appt.size() - 1)).toString());
+					System.out.println("...added");
+				} else if (choice == 4) {
+
+				}
+
+				else {
+					System.out.println("input invalid, please type in 1, 2, 3, 4");
+				}
+			} catch (Exception e) {
+				choice = 4;
+			}
+		}
+
+		return appt;
+	}
+
+	public static void main(String[] args) throws IOException {
+		ArrayList<Appointment> appt = new ArrayList<Appointment>();
+		appt = addApp(appt);
+		for (int i = 0; i < appt.size(); i++) {
+			System.out.println(appt.get(i).toString());
+		}
+	}
+
+}

@@ -1,0 +1,101 @@
+1 Leota, Jose, Cecily, Tamar
+2 Natalie
+3 Cammy, Lavera, Kanisha
+4 EMPTY LINE
+5 Vallie
+6 Francine, Elly, Viva
+7 Shenika, Delmy, Tawna, Tammara, Elvera
+8 Carmelina
+9 Kris, Moon, Myra
+10 Kiley
+11 EMPTY LINE
+12 Mattie, Gladys, Blondell
+13 Fletcher, Ezekiel, Bernardo, Solange, Laurel, Devorah, Cory
+14 EMPTY LINE
+15 Simona, Lettie
+16 Tyra
+17 EMPTY LINE
+18 Yuki
+19 Willard
+20 EMPTY LINE
+21 Roxane, Lorrie, Maurine, Arlette
+22 EMPTY LINE
+23 Donette, Penney
+24 EMPTY LINE
+25 EMPTY LINE
+26 Maryann
+27 Stephen
+28 EMPTY LINE
+29 Rozella, Youlanda, Emerson, Johnetta, Stephaine
+30 EMPTY LINE
+31 Mitsue, Veronika
+32 EMPTY LINE
+33 Josephine
+34 Valentine, Dominque
+35 EMPTY LINE
+36 EMPTY LINE
+37 EMPTY LINE
+38 Willow
+39 Tonette
+40 Marjory
+41 EMPTY LINE
+42 EMPTY LINE
+43 EMPTY LINE
+44 EMPTY LINE
+45 EMPTY LINE
+46 EMPTY LINE
+47 EMPTY LINE
+48 EMPTY LINE
+49 EMPTY LINE
+50 Timothy
+51 EMPTY LINE
+52 EMPTY LINE
+53 EMPTY LINE
+54 EMPTY LINE
+55 EMPTY LINE
+56 EMPTY LINE
+57 EMPTY LINE
+58 EMPTY LINE
+59 EMPTY LINE
+60 EMPTY LINE
+61 EMPTY LINE
+62 EMPTY LINE
+63 EMPTY LINE
+64 EMPTY LINE
+65 EMPTY LINE
+66 EMPTY LINE
+67 EMPTY LINE
+68 EMPTY LINE
+69 EMPTY LINE
+70 EMPTY LINE
+71 EMPTY LINE
+72 Abel
+73 EMPTY LINE
+74 EMPTY LINE
+75 EMPTY LINE
+76 Danica
+77 EMPTY LINE
+78 Lai
+79 EMPTY LINE
+80 EMPTY LINE
+81 EMPTY LINE
+82 EMPTY LINE
+83 Albina
+84 Sage, Deeanna, Micaela, Carma
+85 Jamal
+86 Jina
+87 Chanel, Amber
+88 EMPTY LINE
+89 Meaghan, Ammie, Sabra
+90 Blair
+91 EMPTY LINE
+92 Graciela
+93 Allene, Kati, Ilene
+94 Lenna, Alisha, Erick, Fatima, Karl, Kallie, Delisa, Malinda
+95 Art, Bobbye
+96 James, Dyan, Elza
+97 Brock, Wilda, Lisha
+98 EMPTY LINE
+99 Minna, Ernie, Alishia, Arlene
+100 Bette
+There are 55 empty lines.

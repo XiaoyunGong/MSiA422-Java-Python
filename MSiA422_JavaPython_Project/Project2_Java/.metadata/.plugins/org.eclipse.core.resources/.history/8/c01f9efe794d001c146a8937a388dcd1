@@ -1,0 +1,68 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class myPandas {
+	public static String path;
+	
+	
+	public static myDataFrame readCSV(String path) throws FileNotFoundException {
+		File text = new File(path);
+		
+		//create data
+		ArrayList<ArrayList<Object>> data = new ArrayList<ArrayList<Object>>();
+		
+		//read in data
+		Scanner sc = new Scanner(text);
+		
+		while(sc.hasNextLine()) {
+            String row = sc.nextLine();
+            String[] row_split = row.split(",");
+            
+            ArrayList<Object> current_row = new ArrayList<>(); //create a new arraylist for each row
+            
+            current_row.add(String.valueOf(row_split[0]));
+            current_row.add(String.valueOf(row_split[1]));
+            current_row.add(Integer.valueOf(row_split[2]));
+            current_row.add(String.valueOf(row_split[3]));
+            current_row.add(Integer.valueOf(row_split[4]));
+            data.add(current_row);
+        }
+        sc.close();
+        
+        myDataFrame df = new myDataFrame(data);
+		return df;
+	}
+	
+	public static void writeCSV(myDataFrame data, String path) throws IOException {
+        FileWriter writer = new FileWriter(path);
+        int nrows = data.size();
+        int ncols = 5;
+        String[] line_arr = new String[nrows];
+        for (int i = 0; i < nrows; i++) {
+            String line = new String();
+            line = "";
+            for (int j = 0; j < ncols; j++){
+                line = line + data.data.get(i).get(j) + ",";
+            }
+            line = line.substring(0, line.length() - 1);
+            line_arr[i] = line;
+        }
+        for(String str: line_arr) {
+            writer.write(str + System.lineSeparator());
+        }
+        writer.close();
+    }
+	
+	
+	public static void main(String[] args) throws IOException {
+		path = "/Users/shawngong/Desktop/FALL2021/MSiA422_JavaPython_Homework/Java_Project/namesbystate/LA.txt";
+		myDataFrame df = readCSV(path);
+		writeCSV(df, "/Users/shawngong/Desktop/test.txt");
+
+	}
+
+}

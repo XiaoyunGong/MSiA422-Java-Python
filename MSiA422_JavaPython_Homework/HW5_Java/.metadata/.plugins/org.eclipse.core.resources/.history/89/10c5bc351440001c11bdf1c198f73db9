@@ -1,0 +1,30 @@
+import java.time.LocalDate;
+
+public class Monthly extends Appointment {
+	public String type = "Monthly";
+	public Integer startYear, startMonth, endYear, endMonth, day;
+
+	// constructor
+	public Monthly(String description, int startYear, int startMonth, int endYear, int endMonth, int day) {
+		super(description);
+		this.type = "Monthly";
+		this.startYear = startYear;
+		this.startMonth = startMonth;
+		this.endYear = endYear;
+		this.endMonth = endMonth;
+		this.day = day;
+	}
+
+	public boolean occursOn(int year, int month, int day) {
+		LocalDate d = LocalDate.of(year, month, day);
+		LocalDate start = LocalDate.of(startYear, startMonth, this.day);
+		LocalDate end = LocalDate.of(endYear, endMonth, this.day);
+		return (d.isBefore(start) && d.isAfter(end) && d.getDayOfMonth() == this.day);
+	}
+
+	
+	public String toString() {
+		return "Monthly Meeting " +  Monthly.description + " starting from " + this.startYear + "/" + this.startMonth + " ending on " + this.endYear + "/" + this.endMonth + " occurs on the " + this.day;
+	}
+
+}

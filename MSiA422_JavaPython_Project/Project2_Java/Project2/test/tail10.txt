@@ -1,0 +1,10 @@
+IL,F,1910,Mary,1076
+IL,F,1910,Helen,917
+IL,F,1910,Dorothy,553
+IL,F,1910,Margaret,501
+IL,F,1910,Mildred,426
+IL,F,1910,Ruth,423
+IL,F,1910,Marie,374
+IL,F,1910,Anna,370
+IL,F,1910,Florence,308
+IL,F,1910,Frances,287

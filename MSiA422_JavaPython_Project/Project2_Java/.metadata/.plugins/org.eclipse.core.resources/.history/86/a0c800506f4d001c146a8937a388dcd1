@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+public class myDataFrame {
+	
+	//public ArrayList<String> header;
+    public ArrayList<ArrayList<Object>> data;
+	
+	//constructor
+	public myDataFrame(ArrayList<ArrayList<Object>> data) {
+		//this.header = header;
+		this.data = data;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

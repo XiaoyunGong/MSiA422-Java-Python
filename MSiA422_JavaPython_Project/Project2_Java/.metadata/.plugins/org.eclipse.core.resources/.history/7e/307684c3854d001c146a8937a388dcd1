@@ -1,0 +1,47 @@
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class testCases {
+	
+
+	public static void main(String[] args) throws IOException {	
+		myPandas pd = new myPandas();
+		
+		//1. MyDataFrame readCSV(String path) 
+		String path = "/Users/shawngong/Desktop/FALL2021/MSiA422_JavaPython_Homework/Java_Project/namesbystate/IL.txt";
+		myDataFrame df = myPandas.readCSV(path);
+		
+//		//2. void writeCSV(MyDataFrame data, String path) 
+//		pd.writeCSV(df, "test/writeCSV.txt");
+//		
+//		//3. MyDataFrame concat(MyDataFrame df1, MyDataFrame df2) 
+//		
+//		//4. Head and Tail. 
+//		myDataFrame head_df = df.head(10);
+//		pd.writeCSV(head_df, "test/head10.txt");
+//		myDataFrame tail_df = df.head(10);
+//		pd.writeCSV(tail_df, "test/tail10.txt");
+//		
+//		//5. dType
+//		int index_dType = 4;
+//		String dType1 = df.dType(index_dType);
+//        System.out.println("The data type of column " + index_dType + " is " + dType1 + '.');
+//		
+//        String name_dType = "Gender";
+//        String dType2 = df.dType(name_dType);
+//        System.out.println("The data type of column " + name_dType + " is " + dType2 + '.');
+        
+        //6. Slicing 
+        int index_slice = 2;
+		ArrayList<ArrayList<Object>> slice = new ArrayList<>();
+		for (int i = 0; i < 5; i++) {
+			System.out.print(i);
+			ArrayList<Object> temp = new ArrayList<>();
+			temp.add(df.data.get(i).get(index_slice));
+			slice.add(temp);
+		}
+		myDataFrame slice_df = new myDataFrame(slice);
+		System.out.print(slice_df.toString());
+        pd.writeCSV(slice_df, "test/slice_byindex.txt");
+	}
+}
